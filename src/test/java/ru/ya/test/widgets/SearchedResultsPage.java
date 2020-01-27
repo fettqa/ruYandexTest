@@ -1,4 +1,4 @@
-package ru.yandex.test.widgets;
+package ru.ya.test.widgets;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

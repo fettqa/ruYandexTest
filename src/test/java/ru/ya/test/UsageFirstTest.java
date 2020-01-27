@@ -1,11 +1,11 @@
-package ru.yandex.test;
+package ru.ya.test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import ru.yandex.test.widgets.MainSearchingPage;
-import ru.yandex.test.widgets.SearchedResultsPage;
+import ru.ya.test.widgets.MainSearchingPage;
+import ru.ya.test.widgets.SearchedResultsPage;
 
 /* Сценарий 1:
          •       Для сайта https://ya.ru/ создать следующие сценарии:
@@ -31,7 +31,7 @@ public class UsageFirstTest {
     }
 
     @Test
-    public void FirstMailAuthorization() {
+    public void firstTest() {
         mainSearchingPage.inputRequest(request);
         SearchedResultsPage searchedResultsPage = mainSearchingPage.findRequest();
         searchedResultsPage.assertResults(condition);
