@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import ru.yandex.test.widgets.MainSearchingPage;
+import ru.yandex.test.widgets.SearchedResultsPage;
 
 /* Сценарий 1:
          •       Для сайта https://ya.ru/ создать следующие сценарии:
@@ -21,6 +22,7 @@ import ru.yandex.test.widgets.MainSearchingPage;
 public class UsageFirstTest {
     private final MainSearchingPage mainSearchingPage = new MainSearchingPage();
     private final String request = "Основы автоматизации тестирования";
+    private final String condition = "Результаты поиска";
 
     @BeforeClass
     public static void setUp(){
@@ -30,7 +32,8 @@ public class UsageFirstTest {
 
     @Test
     public void FirstMailAuthorization() {
-        mainSearchingPage.inputRequest(request).
-                   findRequest();
+        mainSearchingPage.inputRequest(request);
+        SearchedResultsPage searchedResultsPage = mainSearchingPage.findRequest();
+        searchedResultsPage.assertResults(condition);
     }
 }
